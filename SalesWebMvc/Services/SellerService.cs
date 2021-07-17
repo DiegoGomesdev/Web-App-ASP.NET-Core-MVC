@@ -22,9 +22,12 @@ namespace SalesWebMvc.Services
             return _context.Seller.ToList();
         }
 
-        public static implicit operator SellerService(SellersController v)
+        public void Insert(Seller obj)
         {
-            throw new NotImplementedException();
+            _context.Add(obj);
+            _context.SaveChanges();
         }
+
+
     }
 }
